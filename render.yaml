@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: marter-women-clothes
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: store-data
+      mountPath: /data
+      sizeGB: 1

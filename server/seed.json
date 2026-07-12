@@ -1,0 +1,533 @@
+[
+  {
+    "name": "دشداشه زبده",
+    "sku": "mw-16",
+    "category": "دشاديش",
+    "price": "",
+    "sizes": [
+      "3xl-4xl-5xl-6xl"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": " متوفر بعدة ألوان وقياسات، مناسب للبيع بالجملة وأصحاب المحلات.واصحاب البيجات",
+    "images": [
+      "/uploads/1783876363533-mapjkq.jpeg",
+      "/uploads/1783876370819-ap5q1g.jpeg",
+      "/uploads/1783876370819-mbc9xb.jpeg",
+      "/uploads/1783876370822-i0boc6.jpeg",
+      "/uploads/1783876370823-wzltqy.jpeg",
+      "/uploads/1783876370823-7779yb.jpeg",
+      "/uploads/1783876370824-ysyzhq.jpeg",
+      "/uploads/1783876370825-ihehew.jpeg",
+      "/uploads/1783876370825-rzdz2e.jpeg"
+    ],
+    "featured": true,
+    "badge": "عرض خاص",
+    "minOrder": 12,
+    "id": "1783876437587-r28dk",
+    "createdAt": "2026-07-12T17:13:57.587Z",
+    "updatedAt": "2026-07-12T17:49:22.229Z"
+  },
+  {
+    "name": "بجامه زبده",
+    "sku": "MW-16",
+    "category": "بجامات",
+    "price": "",
+    "sizes": [
+      "3X-4X-5X-6X-"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783875369818-u7fxdm.jpeg",
+      "/uploads/1783875374610-y7fr75.jpeg",
+      "/uploads/1783875378848-jh7l47.jpeg",
+      "/uploads/1783875384236-voknxf.jpeg",
+      "/uploads/1783875389783-xg2jq9.jpeg",
+      "/uploads/1783875395825-tmutts.jpeg",
+      "/uploads/1783875403804-v6db6d.jpeg",
+      "/uploads/1783875412389-bdbyen.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 12,
+    "id": "1783875520345-w2ucq",
+    "createdAt": "2026-07-12T16:58:40.345Z"
+  },
+  {
+    "name": "بجامه",
+    "sku": "mw-14",
+    "category": "بجامات",
+    "price": "",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783875108353-id45fl.jpeg",
+      "/uploads/1783875112995-hi6dsx.jpeg",
+      "/uploads/1783875117952-40w5yz.jpeg",
+      "/uploads/1783875122784-kdnfzi.jpeg",
+      "/uploads/1783875128217-vb15a1.jpeg",
+      "/uploads/1783875133746-eexus5.jpeg",
+      "/uploads/1783875139817-gzoo9o.jpeg",
+      "/uploads/1783875147351-do6scf.jpeg",
+      "/uploads/1783875153202-7tb2mq.jpeg",
+      "/uploads/1783875159468-0ayqhr.jpeg"
+    ],
+    "featured": true,
+    "badge": "الأكثر طلباً",
+    "minOrder": 12,
+    "id": "1783875211258-zrogl",
+    "createdAt": "2026-07-12T16:53:31.258Z",
+    "updatedAt": "2026-07-12T17:19:23.909Z"
+  },
+  {
+    "name": "بجامه",
+    "sku": "MN-13",
+    "category": "بجامات",
+    "price": "",
+    "sizes": [
+      "فري"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783874425751-cacnm3.jpeg",
+      "/uploads/1783874429749-7sqkog.jpeg",
+      "/uploads/1783874433840-45jnw6.jpeg",
+      "/uploads/1783874438467-en8zqx.jpeg",
+      "/uploads/1783874443167-0k6b6l.jpeg",
+      "/uploads/1783874451766-qhblnz.jpeg",
+      "/uploads/1783874458583-eozq7m.jpeg",
+      "/uploads/1783874465363-m1d7xz.jpeg",
+      "/uploads/1783874474133-lkmtb9.jpeg",
+      "/uploads/1783874478928-gf3bwk.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 6,
+    "id": "1783874487121-q38r6",
+    "createdAt": "2026-07-12T16:41:27.121Z",
+    "updatedAt": "2026-07-12T16:41:32.766Z"
+  },
+  {
+    "name": "فستان",
+    "sku": "MN-12",
+    "category": "فساتين",
+    "price": "0",
+    "sizes": [
+      "فريس"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783873486512-tetni2.jpeg",
+      "/uploads/1783873490181-aisv8x.jpeg",
+      "/uploads/1783873494849-8ii65o.jpeg",
+      "/uploads/1783873535551-d7newl.jpeg",
+      "/uploads/1783873542783-eenl4z.jpeg",
+      "/uploads/1783873547731-1ikqm3.jpeg",
+      "/uploads/1783873554028-2hoh6o.jpeg",
+      "/uploads/1783873562245-dcumbs.jpeg",
+      "/uploads/1783873578924-pt6isz.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 6,
+    "id": "1783873741346-yfbkr",
+    "createdAt": "2026-07-12T16:29:01.346Z"
+  },
+  {
+    "name": "بجامه ستن",
+    "sku": "MW-11",
+    "category": "بجامات",
+    "price": "",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783873068668-ym5xp4.jpeg",
+      "/uploads/1783873102704-l26sqr.jpeg",
+      "/uploads/1783873107454-bbje5f.jpeg",
+      "/uploads/1783873114329-51llmo.jpeg",
+      "/uploads/1783873119986-4ajosh.jpeg"
+    ],
+    "featured": true,
+    "badge": "الأكثر طلباً",
+    "minOrder": 12,
+    "id": "1783873362006-21xfp",
+    "createdAt": "2026-07-12T16:22:42.006Z",
+    "updatedAt": "2026-07-12T17:19:29.354Z"
+  },
+  {
+    "name": "دشداشه زبده",
+    "sku": "MW-10",
+    "category": "دشاديش",
+    "price": "",
+    "sizes": [
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783872653894-3h5p69.jpeg",
+      "/uploads/1783872658113-3ccsqz.jpeg",
+      "/uploads/1783872662924-01qdy0.jpeg",
+      "/uploads/1783872667256-96recm.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 6,
+    "id": "1783872749151-03rgc",
+    "createdAt": "2026-07-12T16:12:29.151Z"
+  },
+  {
+    "name": "بجامه ستن",
+    "sku": "mw-009",
+    "category": "بجامات",
+    "price": "",
+    "sizes": [
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783871736489-ipjusb.jpeg",
+      "/uploads/1783871741236-44cy57.jpeg",
+      "/uploads/1783871745202-ajf1db.jpeg",
+      "/uploads/1783871749622-5tnorf.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 12,
+    "id": "1783871846369-2qqrt",
+    "createdAt": "2026-07-12T15:57:26.369Z"
+  },
+  {
+    "name": "شاشه كريشه",
+    "sku": "MW-008",
+    "category": "دشاديش",
+    "price": "",
+    "sizes": [
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783871556204-f4totd.jpeg",
+      "/uploads/1783871560052-84b8fr.jpeg",
+      "/uploads/1783871563713-fjcp9o.jpeg",
+      "/uploads/1783871568570-36plxe.jpeg",
+      "/uploads/1783871573544-x5kke3.jpeg",
+      "/uploads/1783871579662-mkc6w3.jpeg",
+      "/uploads/1783871585871-wjccpx.jpeg",
+      "/uploads/1783871602681-rikw9h.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 6,
+    "id": "1783871695082-lvjj4",
+    "createdAt": "2026-07-12T15:54:55.082Z"
+  },
+  {
+    "name": "كلوش زبده",
+    "sku": "mw-007",
+    "category": "دشاديش",
+    "price": "",
+    "sizes": [
+      "3XL-4XL-5XL-6XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783871348845-ezucdc.jpeg",
+      "/uploads/1783871353043-ej1yva.jpeg",
+      "/uploads/1783871357335-yul29a.jpeg",
+      "/uploads/1783871362539-r6yg8e.jpeg",
+      "/uploads/1783871367382-ppgm9u.jpeg",
+      "/uploads/1783871373343-dtcdzy.jpeg",
+      "/uploads/1783871381330-wvq2bw.jpeg",
+      "/uploads/1783871391318-gwa6qg.jpeg",
+      "/uploads/1783871401019-u9ytow.jpeg"
+    ],
+    "featured": true,
+    "badge": "الأكثر طلباً",
+    "minOrder": 12,
+    "id": "1783871506398-lrf66",
+    "createdAt": "2026-07-12T15:51:46.398Z"
+  },
+  {
+    "name": "بجامه",
+    "sku": "mw-006",
+    "category": "بجامات",
+    "price": "",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": "",
+    "images": [
+      "/uploads/1783871178435-xvp42m.jpeg",
+      "/uploads/1783871181962-0a3it6.jpeg",
+      "/uploads/1783871186210-dwvv2n.jpeg",
+      "/uploads/1783871191180-zcrfju.jpeg",
+      "/uploads/1783871196165-7zpvw5.jpeg",
+      "/uploads/1783871201591-i3224d.jpeg",
+      "/uploads/1783871208832-yvha8e.jpeg",
+      "/uploads/1783871216161-plhfb6.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 12,
+    "id": "1783871262248-jjohq",
+    "createdAt": "2026-07-12T15:47:42.248Z"
+  },
+  {
+    "name": "بجامه زبده",
+    "sku": "mw-005",
+    "category": "بجامات",
+    "price": "0",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": " متوفر بعدة ألوان وقياسات، مناسب للبيع بالجملة وأصحاب المحلات.واصحاب البيجات",
+    "images": [
+      "/uploads/1783871004631-icrk6i.jpeg",
+      "/uploads/1783871008739-bsxbsj.jpeg",
+      "/uploads/1783871014813-zexi8h.jpeg",
+      "/uploads/1783871019590-hpa6wg.jpeg",
+      "/uploads/1783871025338-l05car.jpeg",
+      "/uploads/1783871033679-ae1waf.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 12,
+    "id": "1783871080912-owkwu",
+    "createdAt": "2026-07-12T15:44:40.912Z",
+    "updatedAt": "2026-07-12T17:49:10.726Z"
+  },
+  {
+    "name": "بجامه",
+    "sku": "mw.004",
+    "category": "بجامات",
+    "price": "0",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": " متوفر بعدة ألوان وقياسات، مناسب للبيع بالجملة وأصحاب المحلات.واصحاب البيجات",
+    "images": [
+      "/uploads/1783870328243-e8eg1c.jpeg",
+      "/uploads/1783870331903-38m09s.jpeg",
+      "/uploads/1783870336372-lqpd2z.jpeg",
+      "/uploads/1783870340956-nm02wl.jpeg",
+      "/uploads/1783870346392-a29xn8.jpeg",
+      "/uploads/1783870353350-y9ky6d.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 12,
+    "id": "1783870455721-il1ix",
+    "createdAt": "2026-07-12T15:34:15.721Z",
+    "updatedAt": "2026-07-12T17:49:05.429Z"
+  },
+  {
+    "name": "فستان كشمير",
+    "sku": "mw-003",
+    "category": "فساتين",
+    "price": "",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": " متوفر بعدة ألوان وقياسات، مناسب للبيع بالجملة وأصحاب المحلات.واصحاب البيجات",
+    "images": [
+      "/uploads/1783870038801-bum3zm.jpeg",
+      "/uploads/1783870043132-wqqyax.jpeg",
+      "/uploads/1783870047646-om6jrt.jpeg",
+      "/uploads/1783870052469-amdwjy.jpeg",
+      "/uploads/1783870057782-ktrog2.jpeg",
+      "/uploads/1783870063950-wjkcyd.jpeg",
+      "/uploads/1783870071000-y4njgj.jpeg",
+      "/uploads/1783870079756-1ian6u.jpeg",
+      "/uploads/1783870095882-0sady4.jpeg",
+      "/uploads/1783870104626-86wvxb.jpeg"
+    ],
+    "featured": true,
+    "badge": "جديد",
+    "minOrder": 6,
+    "id": "1783870231300-e7yft",
+    "createdAt": "2026-07-12T15:30:31.301Z",
+    "updatedAt": "2026-07-12T17:48:59.004Z"
+  },
+  {
+    "name": "‏فستان كشمير",
+    "sku": "mn-002",
+    "category": "فساتين",
+    "price": "0",
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "colors": [
+      {
+        "name": "متعدد",
+        "hex": "#b59b83"
+      }
+    ],
+    "description": " متوفر بعدة ألوان وقياسات، مناسب للبيع بالجملة وأصحاب المحلات.واصحاب البيجات",
+    "images": [
+      "/uploads/1783869680911-9uetkt.jpeg",
+      "/uploads/1783869690012-rom449.jpeg",
+      "/uploads/1783869700550-4389xn.jpeg",
+      "/uploads/1783869724560-w8s16u.jpeg",
+      "/uploads/1783869730901-edsxt8.jpeg",
+      "/uploads/1783869741201-4a3krv.jpeg",
+      "/uploads/1783869748484-nwto97.jpeg",
+      "/uploads/1783869757026-rywlif.jpeg",
+      "/uploads/1783869769918-e3hxtx.jpeg"
+    ],
+    "featured": false,
+    "badge": "جديد",
+    "minOrder": 6,
+    "id": "1783869784302-sfxql",
+    "createdAt": "2026-07-12T15:23:04.302Z",
+    "updatedAt": "2026-07-12T17:48:52.449Z"
+  },
+  {
+    "name": "فستان شيفون",
+    "sku": "mw-001",
+    "category": "فساتين",
+    "price": "0",
+    "sizes": [
+      "M<L<XL<2XL<"
+    ],
+    "colors": [
+      {
+        "name": "أبيض",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "أحمر",
+        "hex": "#9f2335"
+      },
+      {
+        "name": "أسود",
+        "hex": "#111111"
+      }
+    ],
+    "description": "فستان شيفون نسائي أنيق بقصة مريحة وقماش خفيف وناعم، متوفر بعدة ألوان وقياسات، مناسب للبيع بالجملة وأصحاب المحلات.واصحاب البيجات",
+    "images": [
+      "/uploads/1783860426739-jq3wpi.jpeg",
+      "/uploads/1783860432777-8koeky.jpeg",
+      "/uploads/1783860437008-yo5uj2.jpeg",
+      "/uploads/1783860441607-fwlf4h.jpeg"
+    ],
+    "featured": true,
+    "badge": "الأكثر طلباً",
+    "minOrder": 6,
+    "id": "1783860879357-g04uy",
+    "createdAt": "2026-07-12T12:54:39.357Z",
+    "updatedAt": "2026-07-12T17:48:39.700Z"
+  }
+]
