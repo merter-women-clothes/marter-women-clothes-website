@@ -110,3 +110,167 @@
     padding: 17px;
   }
 }
+
+/* Mobile storefront stability fixes.
+   Keep every public page inside the phone viewport and show product photos
+   without cropping the garments. */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main,
+.topbar,
+.header,
+.footer {
+  width: 100%;
+  max-width: 100%;
+}
+
+.product-page,
+.product-detail,
+.gallery,
+.main-photo,
+.detail-info {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.main-photo {
+  background: #f2ede6;
+}
+
+.main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center;
+  background: #f2ede6;
+}
+
+@media (max-width: 900px) {
+  .product-page {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .product-detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    direction: rtl;
+  }
+
+  .main-photo {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 4 / 5;
+  }
+
+  .thumbs {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 0 7px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .thumbs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thumbs button {
+    flex: 0 0 78px;
+    width: 78px;
+    height: 98px;
+  }
+
+  .detail-info {
+    width: 100%;
+    padding-top: 8px;
+  }
+
+  .footer {
+    display: block;
+    clear: both;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    gap: 32px;
+    margin: 0;
+  }
+
+  .footer-grid > div,
+  .footer-grid p,
+  .copyright {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .copyright {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-page {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .breadcrumbs {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .main-photo {
+    aspect-ratio: 4 / 5;
+  }
+
+  .detail-info h1 {
+    overflow-wrap: anywhere;
+  }
+
+  .order-note,
+  .order-actions,
+  .order-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .footer {
+    padding: 48px 24px 18px;
+  }
+
+  .copyright {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 36px;
+  }
+}
