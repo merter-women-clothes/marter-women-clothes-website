@@ -23,10 +23,10 @@ export default function Home() {
       <div className="hero-image"/>
       <div className="hero-overlay"/>
       <div className="hero-content">
-        <span className="eyebrow">تشكيلة 2026 • وصلت حديثاً</span>
-        <h1>أناقة تُباع<br/><em>بالجملة</em></h1>
-        <p>أحدث موديلات الملابس النسائية المستوردة من تركيا والصين ومصر، بأسعار تجار من قلب الشورجة وتوصيل مضمون لكل العراق.</p>
-        <div className="hero-buttons"><Link className="btn btn-gold" to="/products">تسوّق التشكيلة <Icon name="arrow" size={18}/></Link><a className="btn btn-glass" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}>تواصل واتساب</a></div>
+        <span className="eyebrow">مارتر • شريكك بالجملة</span>
+        <h1>من أول درزن<br/>إلى <em>أكبر محل</em></h1>
+        <p>سواء تبدأ مشروعاً جديداً أو عندك محل كبير، مارتر يجهزك بموديلات مطلوبة وكميات تناسب شغلك، مع الدفع عند الاستلام والتوصيل لكل العراق.</p>
+        <div className="hero-buttons"><Link className="btn btn-gold" to="/products">تصفّح التشكيلة <Icon name="arrow" size={18}/></Link><a className="btn btn-glass" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}>تواصل واتساب</a></div>
       </div>
       <div className="hero-note"><b>01</b><span>اختيارات الموسم<br/><small>جودة تستحقها تجارتك</small></span></div>
     </section>
