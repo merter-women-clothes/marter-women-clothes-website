@@ -39,8 +39,13 @@ export default function ProductPage() {
         <p className="description">{product.description}</p>
         <div className="option"><b>القياسات المتوفرة</b><div className="chips">{product.sizes.map(size => <span key={size}>{size}</span>)}</div></div>
         <div className="option"><b>الألوان المتوفرة</b><div className="color-list">{product.colors.map(color => <span key={color}><i style={{background: color.hex || '#b59b83'}}/>{color.name || color}</span>)}</div></div>
-        <div className="order-note"><Icon name="bag"/><span><b>أقل طلب: {product.minOrder || 6} قطع</b><small>راسلنا لمعرفة سعر الدرزن والكميات</small></span></div>
-        <div className="order-actions"><a className="btn whatsapp" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}><Icon name="phone"/> طلب عبر واتساب</a><a className="btn telegram" href={`https://t.me/${STORE.telegram}?text=${text}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>طلب عبر تيليجرام</a></div>
+        <div className="order-note"><Icon name="bag"/><span><b>أقل طلب: {STORE.minimumOrderLabel}</b><small>البيع بالجملة فقط — راسلنا لمعرفة سعر الكمية</small></span></div>
+        <div className="product-policy" aria-label="سياسة الطلب والدفع">
+          <div><Icon name="check" size={18}/><span><b>الدفع عند الاستلام</b><small>بدون تحويل مسبق</small></span></div>
+          <div><Icon name="check" size={18}/><span><b>فحص قبل الدفع</b><small>تأكد من الطلب عند وصوله</small></span></div>
+          <div><Icon name="check" size={18}/><span><b>استبدال أو إرجاع</b><small>عند وجود خلل أو عدم مطابقة</small></span></div>
+        </div>
+        <div className="order-actions"><a className="btn whatsapp" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}><Icon name="phone"/> اطلب درزن عبر واتساب</a><a className="btn telegram" href={`https://t.me/${STORE.telegram}?text=${text}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>طلب عبر تيليجرام</a></div>
         <p className="delivery-line"><Icon name="truck" size={20}/> توصيل سريع وآمن إلى جميع محافظات العراق</p>
       </div>
     </section>

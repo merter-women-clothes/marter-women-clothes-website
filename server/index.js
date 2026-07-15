@@ -14,6 +14,7 @@ const seedFile = path.join(root, 'server', 'seed.json');
 const seedUploadsArchive = path.join(root, 'server', 'seed-uploads.zip');
 const port = process.env.PORT || 3001;
 const adminPassword = process.env.ADMIN_PASSWORD || 'master2026';
+const minimumOrder = 12;
 
 fs.mkdirSync(uploadsDir, { recursive: true });
 if (!fs.existsSync(dbFile)) fs.copyFileSync(seedFile, dbFile);
@@ -28,7 +29,7 @@ if (fs.existsSync(seedUploadsArchive)) {
   }
 }
 
-const readProducts = () => JSON.parse(fs.readFileSync(dbFile, 'utf8'));
+const readProducts = () => JSON.parse(fs.readFileSync(dbFile, 'utf8')).map(product => ({...product, minOrder: minimumOrder}));
 const writeProducts = products => fs.writeFileSync(dbFile, JSON.stringify(products, null, 2));
 const auth = (req, res, next) => req.headers['x-admin-password'] === adminPassword ? next() : res.status(401).json({error:'Unauthorized'});
 const storage = multer.diskStorage({
@@ -51,13 +52,13 @@ app.post('/api/admin/login', (req, res) => req.body.password === adminPassword ?
 app.post('/api/upload', auth, upload.array('images', 8), (req, res) => res.json({urls:req.files.map(f => `/uploads/${f.filename}`)}));
 app.post('/api/products', auth, (req, res) => {
   const products = readProducts();
-  const product = {...req.body, id: `${Date.now()}-${Math.random().toString(36).slice(2,7)}`, createdAt: new Date().toISOString()};
+  const product = {...req.body, minOrder: minimumOrder, id: `${Date.now()}-${Math.random().toString(36).slice(2,7)}`, createdAt: new Date().toISOString()};
   products.unshift(product); writeProducts(products); res.status(201).json(product);
 });
 app.put('/api/products/:id', auth, (req, res) => {
   const products = readProducts(); const index = products.findIndex(p => p.id === req.params.id);
   if (index < 0) return res.status(404).json({error:'Not found'});
-  products[index] = {...products[index], ...req.body, id:req.params.id, updatedAt:new Date().toISOString()};
+  products[index] = {...products[index], ...req.body, minOrder: minimumOrder, id:req.params.id, updatedAt:new Date().toISOString()};
   writeProducts(products); res.json(products[index]);
 });
 app.delete('/api/products/:id', auth, (req, res) => {

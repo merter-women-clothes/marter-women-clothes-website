@@ -31,7 +31,7 @@ function Header() {
   useEffect(() => { setOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }, [location.pathname]);
   if (location.pathname.startsWith('/admin')) return null;
   return <>
-    <div className="topbar">توصيل إلى جميع محافظات العراق • البيع بالجملة فقط</div>
+    <div className="topbar">أقل طلب 12 قطعة • الدفع عند الاستلام • توصيل لكل العراق</div>
     <header className="header">
       <Link to="/" className="brand">
         <span className="brand-mark">M</span>
@@ -45,7 +45,7 @@ function Header() {
         <a href="#contact">تواصل معنا</a>
       </nav>
       <div className="header-actions">
-        <a className="header-order" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}><Icon name="phone" size={18}/> اطلب الآن</a>
+        <a className="header-order" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}><Icon name="phone" size={18}/> اطلب درزن</a>
         <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="القائمة"><Icon name={open ? 'close' : 'menu'}/></button>
       </div>
     </header>
@@ -59,7 +59,8 @@ function Footer() {
     <div className="footer-grid">
       <div>
         <div className="brand footer-brand"><span className="brand-mark">M</span><span><b className="brand-ar">مارتر</b><small className="brand-sub">MARTER • ألبسة نسائية بالجملة</small></span></div>
-        <p>وجهتكم لملابس النساء بالجملة من قلب سوق الشورجة. موديلات مختارة، أسعار تجار، وتوصيل إلى جميع محافظات العراق.</p>
+        <p>وجهتكم لملابس النساء بالجملة من قلب سوق الشورجة. أقل طلب درزن واحد (12 قطعة)، والدفع عند الاستلام بعد فحص الطلب.</p>
+        <p className="footer-policy">الاستبدال أو الإرجاع متوفر عند وجود خلل أو إذا كان الطلب غير مطابق.</p>
       </div>
       <div><h4>روابط سريعة</h4><Link to="/products">جميع المنتجات</Link><Link to="/products?category=بجامات">البجامات</Link><Link to="/products?category=دشاديش">الدشاديش</Link></div>
       <div><h4>تواصل معنا</h4><p><Icon name="pin" size={18}/> {STORE.location}</p><p>مسؤول الطلبات: {STORE.owner}</p><a href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>تيليجرام: @{STORE.telegram}</a><a href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}>واتساب للطلبات</a></div>

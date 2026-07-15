@@ -13,6 +13,7 @@ export default function ProductCard({ product }) {
     <div className="product-info">
       <span className="product-category">{product.category}</span>
       <Link to={`/product/${product.id}`}><h3>{product.name}</h3></Link>
+      <div className="product-minimum"><Icon name="bag" size={14}/> أقل طلب: درزن (12 قطعة)</div>
       <div className="product-bottom"><strong>{Number(product.price) > 0 ? money(product.price) : 'تواصل لمعرفة السعر'}</strong><small>{Number(product.price) > 0 ? 'للقطعة / جملة' : 'سعر خاص للتجار'}</small></div>
     </div>
   </article>;

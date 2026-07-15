@@ -3,7 +3,7 @@ import { deleteProduct, getProducts, login, saveProduct, uploadImages } from '..
 import { Icon } from '../icons';
 import { money } from '../config';
 
-const emptyProduct = { name: '', sku: '', category: 'بجامات', price: '', sizes: ['M','L','XL','2XL'], colors: [{name:'متعدد', hex:'#b59b83'}], description: '', images: [], featured: true, badge: 'جديد', minOrder: 6 };
+const emptyProduct = { name: '', sku: '', category: 'بجامات', price: '', sizes: ['M','L','XL','2XL'], colors: [{name:'متعدد', hex:'#b59b83'}], description: '', images: [], featured: true, badge: 'جديد', minOrder: 12 };
 
 function Login({ onLogin }) {
   const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ function Login({ onLogin }) {
 }
 
 function ProductForm({ initial, password, onDone, onCancel }) {
-  const [form, setForm] = useState(initial || emptyProduct);
+  const [form, setForm] = useState({...((initial || emptyProduct)), minOrder: 12});
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
@@ -28,7 +28,7 @@ function ProductForm({ initial, password, onDone, onCancel }) {
       <label>كود المنتج<input required value={form.sku} onChange={e => set('sku', e.target.value)} placeholder="MW-001"/></label>
       <label>القسم<select value={form.category} onChange={e => set('category', e.target.value)}><option>بجامات</option><option>دشاديش</option><option>فساتين</option><option>ملابس بيت</option><option>أطقم</option></select></label>
       <label>السعر للقطعة (اختياري)<small>اتركه فارغاً ليظهر: تواصل لمعرفة السعر</small><input type="number" min="0" value={form.price} onChange={e => set('price', e.target.value)} placeholder="بدون سعر معلن"/></label>
-      <label>أقل كمية طلب<input type="number" min="1" value={form.minOrder} onChange={e => set('minOrder', Number(e.target.value))}/></label>
+      <label>أقل كمية طلب<small>ثابت حسب سياسة المتجر: درزن واحد</small><input type="number" value="12" readOnly/></label>
       <label className="full">القياسات <small>افصل بينها بفاصلة</small><input value={form.sizes.join('، ')} onChange={e => set('sizes', e.target.value.split(/[،,]/).map(x=>x.trim()).filter(Boolean))}/></label>
       <label className="full">الألوان <small>مثال: وردي:#e6a6b5، أسود:#111111</small><input value={colorsText} onChange={e => set('colors', e.target.value.split(/[،,]/).map(x => { const [name, hex] = x.trim().split(':'); return {name, hex: hex || '#b59b83'}; }).filter(x=>x.name))}/></label>
       <label className="full">وصف المنتج<textarea rows="4" value={form.description} onChange={e => set('description', e.target.value)} placeholder="الخامة والتفاصيل..."/></label>

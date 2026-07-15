@@ -14,7 +14,7 @@ export default function Products() {
   const categories = ['الكل', ...new Set(products.map(p => p.category))];
   const filtered = useMemo(() => products.filter(p => (category === 'الكل' || p.category === category) && (p.name.includes(query) || p.sku.toLowerCase().includes(query.toLowerCase()))), [products, category, query]);
   return <div className="catalog-page">
-    <section className="page-hero"><span className="eyebrow">تشكيلتنا المتجددة</span><h1>جميع <em>المنتجات</em></h1><p>اختاري الموديلات المناسبة لمحلك واطلبيها مباشرة بالجملة.</p></section>
+    <section className="page-hero"><span className="eyebrow">تشكيلتنا المتجددة</span><h1>جميع <em>المنتجات</em></h1><p>اختاري الموديلات المناسبة لمحلك. أقل طلب درزن واحد (12 قطعة) والدفع عند الاستلام.</p></section>
     <section className="catalog-content">
       <div className="catalog-toolbar">
         <div className="filter-scroll">{categories.map(cat => <button key={cat} className={category === cat ? 'active' : ''} onClick={() => cat === 'الكل' ? setSearchParams({}) : setSearchParams({category: cat})}>{cat}</button>)}</div>

@@ -32,9 +32,10 @@ export default function Home() {
     </section>
 
     <section className="benefits">
-      <div><Icon name="bag"/><span><b>أسعار جملة حقيقية</b><small>مباشرة من سوق الشورجة</small></span></div>
-      <div><Icon name="truck"/><span><b>توصيل لكل العراق</b><small>شحن سريع وآمن للمحافظات</small></span></div>
-      <div><Icon name="check"/><span><b>موديلات مختارة</b><small>جودة وفحص قبل التسليم</small></span></div>
+      <div><Icon name="bag"/><span><b>البيع بالجملة فقط</b><small>أقل طلب: درزن واحد (12 قطعة)</small></span></div>
+      <div><Icon name="phone"/><span><b>الدفع عند الاستلام</b><small>لا حاجة إلى تحويل مسبق</small></span></div>
+      <div><Icon name="check"/><span><b>فحص قبل الدفع</b><small>تأكد من طلبك عند وصوله</small></span></div>
+      <div><Icon name="truck"/><span><b>استبدال أو إرجاع</b><small>عند وجود خلل أو عدم مطابقة</small></span></div>
     </section>
 
     <section className="sourcing-section">
@@ -57,13 +58,28 @@ export default function Home() {
       </Link>)}</div>
     </section>
 
+    <section className="order-guide">
+      <div className="order-guide-heading">
+        <span className="eyebrow dark">طلب جملة واضح وآمن</span>
+        <h2>من اختيار الموديل<br/>إلى <em>باب محلك</em></h2>
+        <p>اطلب بسهولة عبر واتساب، وافحص الشحنة عند وصولها ثم ادفع عند الاستلام.</p>
+        <a className="btn btn-dark" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}><Icon name="phone" size={18}/> اطلب درزن عبر واتساب</a>
+      </div>
+      <div className="order-guide-steps">
+        <article><b>01</b><div><h3>اختر الموديل</h3><p>تصفح التشكيلة وحدد كود المنتج المناسب لتجارتك.</p></div></article>
+        <article><b>02</b><div><h3>اطلب درزن</h3><p>أقل طلب درزن واحد، أي 12 قطعة، والبيع بالجملة فقط.</p></div></article>
+        <article><b>03</b><div><h3>افحص عند الوصول</h3><p>يمكنك التأكد من الطلب قبل دفع المبلغ للمندوب.</p></div></article>
+        <article><b>04</b><div><h3>ادفع عند الاستلام</h3><p>والاستبدال أو الإرجاع متوفر عند الخلل أو عدم المطابقة.</p></div></article>
+      </div>
+    </section>
+
     <section className="section products-home">
       <div className="section-heading-row"><div className="section-title"><span className="eyebrow dark">الأكثر طلباً</span><h2>مختارات <em>التجار</em></h2></div><Link to="/products" className="text-link">مشاهدة الكل <Icon name="arrow" size={17}/></Link></div>
       <div className="product-grid">{products.filter(p => p.featured).slice(0, 4).map(p => <ProductCard key={p.id} product={p}/>)}</div>
     </section>
 
     <section className="wholesale-banner">
-      <div><span className="eyebrow">لأصحاب المحلات والبوتيكات</span><h2>كبّر تجارتك<br/>بتشكيلة <em>تبيع نفسها</em></h2><p>راسلنا للحصول على صور الموديلات المتوفرة وأسعار الكميات الخاصة.</p><a className="btn btn-gold" href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>قناة التيليجرام <Icon name="arrow" size={18}/></a></div>
+      <div><span className="eyebrow">لأصحاب المحلات والبوتيكات</span><h2>كبّر تجارتك<br/>بتشكيلة <em>تبيع نفسها</em></h2><p>راسلنا للحصول على صور الموديلات المتوفرة وأسعار الكميات الخاصة. أقل طلب درزن واحد (12 قطعة).</p><a className="btn btn-gold" href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>قناة التيليجرام <Icon name="arrow" size={18}/></a></div>
       <div className="banner-stat"><strong>+100</strong><span>موديل متجدد<br/>على مدار الموسم</span></div>
     </section>
   </>;
