@@ -4,6 +4,7 @@ import { getProducts } from '../api';
 import ProductCard from '../components/ProductCard';
 import { Icon } from '../icons';
 import { STORE } from '../config';
+import { trackContact } from '../metaPixel';
 import pajamasCategory from '../assets/category-pajamas.webp';
 import dishdashasCategory from '../assets/category-dishdashas.webp';
 import dressesCategory from '../assets/category-dresses.webp';
@@ -25,7 +26,7 @@ export default function Home() {
         <span className="eyebrow">تشكيلة 2026 • وصلت حديثاً</span>
         <h1>أناقة تُباع<br/><em>بالجملة</em></h1>
         <p>أحدث موديلات الملابس النسائية المستوردة من تركيا والصين ومصر، بأسعار تجار من قلب الشورجة وتوصيل مضمون لكل العراق.</p>
-        <div className="hero-buttons"><Link className="btn btn-gold" to="/products">تسوّق التشكيلة <Icon name="arrow" size={18}/></Link><a className="btn btn-glass" href={STORE.whatsappUrl} target="_blank" rel="noreferrer">تواصل واتساب</a></div>
+        <div className="hero-buttons"><Link className="btn btn-gold" to="/products">تسوّق التشكيلة <Icon name="arrow" size={18}/></Link><a className="btn btn-glass" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}>تواصل واتساب</a></div>
       </div>
       <div className="hero-note"><b>01</b><span>اختيارات الموسم<br/><small>جودة تستحقها تجارتك</small></span></div>
     </section>
@@ -62,7 +63,7 @@ export default function Home() {
     </section>
 
     <section className="wholesale-banner">
-      <div><span className="eyebrow">لأصحاب المحلات والبوتيكات</span><h2>كبّر تجارتك<br/>بتشكيلة <em>تبيع نفسها</em></h2><p>راسلنا للحصول على صور الموديلات المتوفرة وأسعار الكميات الخاصة.</p><a className="btn btn-gold" href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer">قناة التيليجرام <Icon name="arrow" size={18}/></a></div>
+      <div><span className="eyebrow">لأصحاب المحلات والبوتيكات</span><h2>كبّر تجارتك<br/>بتشكيلة <em>تبيع نفسها</em></h2><p>راسلنا للحصول على صور الموديلات المتوفرة وأسعار الكميات الخاصة.</p><a className="btn btn-gold" href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>قناة التيليجرام <Icon name="arrow" size={18}/></a></div>
       <div className="banner-stat"><strong>+100</strong><span>موديل متجدد<br/>على مدار الموسم</span></div>
     </section>
   </>;
