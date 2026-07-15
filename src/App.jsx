@@ -1,11 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { Icon } from './icons';
 import { STORE } from './config';
+import { trackContact, trackMeta } from './metaPixel';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import ProductPage from './pages/ProductPage';
 import Admin from './pages/Admin';
+
+function MetaRouteTracker() {
+  const location = useLocation();
+  const firstView = useRef(true);
+
+  useEffect(() => {
+    if (firstView.current) {
+      firstView.current = false;
+      return;
+    }
+    trackMeta('PageView', {
+      page_path: `${location.pathname}${location.search}`,
+    });
+  }, [location.pathname, location.search]);
+
+  return null;
+}
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -27,7 +45,7 @@ function Header() {
         <a href="#contact">تواصل معنا</a>
       </nav>
       <div className="header-actions">
-        <a className="header-order" href={STORE.whatsappUrl} target="_blank" rel="noreferrer"><Icon name="phone" size={18}/> اطلب الآن</a>
+        <a className="header-order" href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}><Icon name="phone" size={18}/> اطلب الآن</a>
         <button className="menu-btn" onClick={() => setOpen(!open)} aria-label="القائمة"><Icon name={open ? 'close' : 'menu'}/></button>
       </div>
     </header>
@@ -44,14 +62,14 @@ function Footer() {
         <p>وجهتكم لملابس النساء بالجملة من قلب سوق الشورجة. موديلات مختارة، أسعار تجار، وتوصيل إلى جميع محافظات العراق.</p>
       </div>
       <div><h4>روابط سريعة</h4><Link to="/products">جميع المنتجات</Link><Link to="/products?category=بجامات">البجامات</Link><Link to="/products?category=دشاديش">الدشاديش</Link></div>
-      <div><h4>تواصل معنا</h4><p><Icon name="pin" size={18}/> {STORE.location}</p><p>مسؤول الطلبات: {STORE.owner}</p><a href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer">تيليجرام: @{STORE.telegram}</a><a href={STORE.whatsappUrl} target="_blank" rel="noreferrer">واتساب للطلبات</a></div>
+      <div><h4>تواصل معنا</h4><p><Icon name="pin" size={18}/> {STORE.location}</p><p>مسؤول الطلبات: {STORE.owner}</p><a href={`https://t.me/${STORE.telegram}`} target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>تيليجرام: @{STORE.telegram}</a><a href={STORE.whatsappUrl} target="_blank" rel="noreferrer" onClick={() => trackContact('whatsapp')}>واتساب للطلبات</a></div>
     </div>
     <div className="copyright"><span>© {new Date().getFullYear()} {STORE.name}</span><Link to="/admin">إدارة المتجر</Link></div>
   </footer>;
 }
 
 function App() {
-  return <><Header/><main><Routes>
+  return <><MetaRouteTracker/><Header/><main><Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/products" element={<Products/>}/>
     <Route path="/product/:id" element={<ProductPage/>}/>
