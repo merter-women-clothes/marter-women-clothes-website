@@ -3,6 +3,7 @@ services:
     name: marter-women-clothes
     runtime: docker
     plan: starter
+    autoDeployTrigger: commit
     healthCheckPath: /api/health
     envVars:
       - key: ADMIN_PASSWORD
