@@ -72,6 +72,293 @@
   background: var(--paper);
 }
 
+/* Real-product video showcase. */
+.video-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: .88fr 1.12fr;
+  min-height: 760px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 16%, rgba(199, 161, 91, .16), transparent 28%),
+    linear-gradient(135deg, #2b211c 0%, #17110e 58%, #0f0b09 100%);
+  color: white;
+}
+
+.video-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 34px;
+  border: 1px solid rgba(218, 189, 131, .13);
+  pointer-events: none;
+}
+
+.video-showcase-copy {
+  position: relative;
+  z-index: 2;
+  align-self: center;
+  padding: 95px 5vw 95px 8vw;
+}
+
+.video-showcase-copy h2 {
+  margin: 14px 0 24px;
+  font-size: clamp(40px, 4.5vw, 66px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -1.5px;
+}
+
+.video-showcase-copy h2 em {
+  color: #dabd83;
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.video-showcase-copy > p {
+  max-width: 510px;
+  margin: 0;
+  color: #cfc4bd;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.video-proof-list {
+  display: grid;
+  gap: 13px;
+  margin: 31px 0 34px;
+  color: #ece5df;
+  font-size: 11px;
+}
+
+.video-proof-list span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.video-proof-list svg {
+  color: var(--gold);
+}
+
+.video-telegram-link {
+  min-width: 205px;
+}
+
+.video-showcase-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: 76px 8vw 76px 4vw;
+  background: linear-gradient(118deg, rgba(255,255,255,.02), rgba(255,255,255,.07));
+}
+
+.video-showcase-stage::after {
+  content: 'VIDEO';
+  position: absolute;
+  right: -13px;
+  bottom: 25px;
+  color: rgba(255,255,255,.025);
+  font: 700 126px/1 'Playfair Display', serif;
+  letter-spacing: 18px;
+}
+
+.video-stage-number {
+  position: absolute;
+  top: 63px;
+  left: 6vw;
+  color: rgba(218, 189, 131, .72);
+  font: 600 42px/1 'Playfair Display', serif;
+}
+
+.video-stage-number::after {
+  content: '';
+  display: inline-block;
+  width: 58px;
+  height: 1px;
+  margin-right: 14px;
+  vertical-align: middle;
+  background: rgba(218, 189, 131, .45);
+}
+
+.video-frame {
+  position: relative;
+  z-index: 2;
+  width: min(440px, 100%);
+  padding: 13px;
+  border: 1px solid rgba(232, 216, 185, .35);
+  background: #f8f4ed;
+  box-shadow: 0 34px 90px rgba(0,0,0,.46);
+  color: var(--ink);
+}
+
+.video-frame-head,
+.video-frame-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 8px;
+}
+
+.video-frame-head span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.video-frame-head i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #27a86f;
+  box-shadow: 0 0 0 4px rgba(39,168,111,.12);
+}
+
+.video-frame-head small {
+  color: var(--muted);
+  font-size: 8px;
+}
+
+.telegram-video {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  background: #241a16;
+}
+
+.telegram-video-fallback {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: right;
+  transition: opacity .3s ease;
+}
+
+.telegram-video-fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.telegram-video-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(16,10,8,.88), rgba(16,10,8,.03) 58%);
+}
+
+.telegram-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 78px;
+  height: 78px;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 50%;
+  background: rgba(20,13,10,.45);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.24);
+}
+
+.telegram-play::before {
+  content: '';
+  position: absolute;
+  inset: -9px;
+  border: 1px solid rgba(218,189,131,.35);
+  border-radius: 50%;
+}
+
+.telegram-play i {
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 17px solid white;
+}
+
+.telegram-video-label {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: white;
+}
+
+.telegram-video-label small {
+  color: #dfc99f;
+  font-size: 8px;
+}
+
+.telegram-video-label b {
+  font-size: 13px;
+}
+
+.telegram-embed {
+  position: relative;
+  z-index: 0;
+  min-height: 540px;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+.telegram-embed iframe {
+  display: block !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+.telegram-video.is-ready .telegram-video-fallback {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.telegram-video.is-ready .telegram-embed {
+  z-index: 2;
+  opacity: 1;
+}
+
+.video-frame-foot {
+  padding-top: 15px;
+  padding-bottom: 4px;
+}
+
+.video-frame-foot div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.video-frame-foot small {
+  color: var(--muted);
+  font-size: 7px;
+}
+
+.video-frame-foot b {
+  font-size: 10px;
+}
+
+.video-frame-foot > span {
+  padding: 7px 10px;
+  background: #eee5d7;
+  color: #7b6035;
+  font-size: 8px;
+  font-weight: 700;
+}
+
 .order-guide-heading h2 {
   margin: 10px 0 18px;
   font-size: clamp(32px, 3.5vw, 50px);
@@ -184,6 +471,19 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+
+  .video-showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .video-showcase-copy {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+
+  .video-showcase-stage {
+    padding-right: 4vw;
+  }
 }
 
 @media (max-width: 600px) {
@@ -204,6 +504,54 @@
   .order-guide {
     gap: 32px;
     padding: 65px 20px;
+  }
+
+  .video-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .video-showcase::before {
+    inset: 14px;
+  }
+
+  .video-showcase-copy {
+    padding: 70px 28px 42px;
+  }
+
+  .video-showcase-copy h2 {
+    font-size: 38px;
+    letter-spacing: -.5px;
+  }
+
+  .video-showcase-copy > p {
+    font-size: 11px;
+  }
+
+  .video-telegram-link {
+    width: 100%;
+  }
+
+  .video-showcase-stage {
+    padding: 45px 28px 72px;
+  }
+
+  .video-stage-number {
+    display: none;
+  }
+
+  .video-showcase-stage::after {
+    right: 5px;
+    bottom: 17px;
+    font-size: 70px;
+  }
+
+  .video-frame {
+    padding: 9px;
+  }
+
+  .telegram-video,
+  .telegram-embed {
+    min-height: 480px;
   }
 
   .order-guide-heading h2 {

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getProducts } from '../api';
 import ProductCard from '../components/ProductCard';
+import TelegramVideo from '../components/TelegramVideo';
 import { Icon } from '../icons';
 import { STORE } from '../config';
 import { trackContact } from '../metaPixel';
@@ -17,7 +18,12 @@ const categories = [
 
 export default function Home() {
   const [products, setProducts] = useState([]);
+  const showVideoPreview = new URLSearchParams(window.location.search).get('videoPreview') === '1';
   useEffect(() => { getProducts().then(setProducts).catch(() => {}); }, []);
+  useEffect(() => {
+    if (!showVideoPreview || window.location.hash !== '#video-preview') return;
+    window.requestAnimationFrame(() => document.getElementById('video-preview')?.scrollIntoView({ behavior: 'smooth' }));
+  }, [showVideoPreview]);
   return <>
     <section className="hero">
       <div className="hero-image"/>
@@ -57,6 +63,37 @@ export default function Home() {
         <img src={cat.image} alt={cat.name}/><div className="category-shade"/><div><small>{cat.subtitle}</small><h3>{cat.name}</h3><span>اكتشفي المجموعة <Icon name="arrow" size={16}/></span></div>
       </Link>)}</div>
     </section>
+
+    {showVideoPreview && <section id="video-preview" className="video-showcase">
+      <div className="video-showcase-copy">
+        <span className="eyebrow">من القماش إلى الحركة</span>
+        <h2>شوف الموديل بالحركة<br/><em>مو بس بصورة</em></h2>
+        <p>شاهد القَصّة، حركة القماش والتفاصيل مثل ما هي على الحقيقة قبل ما تختار طلبك بالجملة.</p>
+        <div className="video-proof-list">
+          <span><Icon name="check" size={17}/> تصوير حقيقي للموديل</span>
+          <span><Icon name="check" size={17}/> تفاصيل أوضح للتاجر</span>
+          <span><Icon name="check" size={17}/> موديلات تتجدد باستمرار</span>
+        </div>
+        <a className="btn btn-gold video-telegram-link" href="https://t.me/master_women_clothes/368" target="_blank" rel="noreferrer" onClick={() => trackContact('telegram')}>شاهد على تيليجرام <Icon name="arrow" size={18}/></a>
+      </div>
+      <div className="video-showcase-stage">
+        <span className="video-stage-number">01</span>
+        <div className="video-frame">
+          <div className="video-frame-head">
+            <span><i/> متوفر الآن</span>
+            <small>مارتر • الشورجة</small>
+          </div>
+          <TelegramVideo
+            post="master_women_clothes/368"
+            poster={dressesCategory}
+          />
+          <div className="video-frame-foot">
+            <div><small>البيع</small><b>بالجملة فقط</b></div>
+            <span>أقل طلب 12 قطعة</span>
+          </div>
+        </div>
+      </div>
+    </section>}
 
     <section className="order-guide">
       <div className="order-guide-heading">
