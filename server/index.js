@@ -60,7 +60,69 @@ const defaultOgImage = () => {
   return pick && pick.images && pick.images[0] ? absoluteUrl(pick.images[0]) : null;
 };
  
-const renderSeoHtml = ({ title, description, pagePath, image, noindex }) => {
+// Schema.org Product structured data (JSON-LD) so Google can show price/availability
+// rich snippets for product pages. Omits "offers" when there's no price (many products
+// are "contact for price"), since a fabricated price would be worse than none.
+const productJsonLd = (product) => {
+  const data = {
+    '@context': 'https://schema.org/',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description || `${product.name} - ${product.category}`,
+    sku: product.sku,
+    category: product.category,
+    image: (product.images || []).map(absoluteUrl).filter(Boolean),
+    brand: { '@type': 'Brand', name: STORE.name },
+    url: `${siteUrl}/product/${product.id}`,
+  };
+  if (Number(product.price) > 0) {
+    data.offers = {
+      '@type': 'Offer',
+      priceCurrency: 'IQD',
+      price: Number(product.price),
+      availability: 'https://schema.org/InStock',
+      url: `${siteUrl}/product/${product.id}`,
+    };
+  }
+  return JSON.stringify(data);
+};
+ 
+// Crawlable fallback content: this store is a client-side-rendered React SPA with no
+// server-side rendering, so <div id="root"></div> is normally empty until JavaScript runs.
+// We put real store info (name, location, WhatsApp/Telegram contact, nav links, and — on
+// product pages — the product's own name/price/description) INSIDE that div. Search engine
+// crawlers and anyone without JS see this content; for regular visitors with JS enabled,
+// React's createRoot() replaces it the instant the app mounts, so it's not visible in normal
+// use — it's purely a crawlability/accessibility fallback, not a UI change.
+const fallbackBody = ({ product } = {}) => {
+  const intro = `
+    <header>
+      <h1>${escapeHtml(STORE.arabicName)}</h1>
+      <p>${escapeHtml(`${STORE.arabicName} بالجملة من ${STORE.location}. ${STORE.minimumOrderLabel} أقل طلب، الدفع عند الاستلام، توصيل لجميع محافظات العراق.`)}</p>
+      <nav>
+        <a href="/products">جميع المنتجات</a> |
+        <a href="/products?category=${encodeURIComponent('بجامات')}">بجامات</a> |
+        <a href="/products?category=${encodeURIComponent('دشاديش')}">دشاديش</a>
+      </nav>
+      <p>العنوان: ${escapeHtml(STORE.location)}</p>
+      <p>
+        <a href="${escapeHtml(STORE.whatsappUrl)}">تواصل عبر واتساب</a> —
+        <a href="https://t.me/${escapeHtml(STORE.telegram)}">تيليجرام: @${escapeHtml(STORE.telegram)}</a>
+      </p>
+    </header>`;
+  if (!product) return intro;
+  const priceLabel = Number(product.price) > 0 ? `${money(product.price)} للقطعة (سعر الجملة)` : 'تواصل لمعرفة سعر الجملة';
+  return `${intro}
+    <article>
+      <h2>${escapeHtml(product.name)}</h2>
+      <p>${escapeHtml(product.category)} • كود ${escapeHtml(product.sku || '')}</p>
+      <p>${escapeHtml(priceLabel)}</p>
+      ${product.description ? `<p>${escapeHtml(product.description)}</p>` : ''}
+      ${(product.images || []).slice(0, 1).map((src) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)}" />`).join('')}
+    </article>`;
+};
+ 
+const renderSeoHtml = ({ title, description, pagePath, image, noindex, jsonLd, product }) => {
   const template = getIndexHtmlTemplate();
   if (!template) return null;
   const safeTitle = escapeHtml(title);
@@ -86,9 +148,12 @@ const renderSeoHtml = ({ title, description, pagePath, image, noindex }) => {
     `<meta name="twitter:description" content="${safeDescription}" />`,
     imageUrl ? `<meta name="twitter:image" content="${imageUrl}" />` : '',
     noindex ? `<meta name="robots" content="noindex, nofollow" />` : '',
+    jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : '',
   ].filter(Boolean).join('\n    ');
  
-  return html.replace('</head>', `  ${extraTags}\n  </head>`);
+  html = html.replace('</head>', `  ${extraTags}\n  </head>`);
+  html = html.replace('<div id="root"></div>', `<div id="root">${fallbackBody({ product })}</div>`);
+  return html;
 };
  
 const app = express();
@@ -183,6 +248,8 @@ if (fs.existsSync(distDir)) {
       description,
       pagePath: `/product/${product.id}`,
       image: product.images && product.images[0],
+      jsonLd: productJsonLd(product),
+      product,
     });
   });
  
@@ -200,3 +267,4 @@ if (fs.existsSync(distDir)) {
  
 app.use((err, _req, res, _next) => res.status(400).json({error:err.message}));
 app.listen(port, () => console.log(`Marter store running on http://localhost:${port}`));
+ 
